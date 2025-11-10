@@ -16,9 +16,9 @@ def test_calcular_imc_altura_zero_gera_erro():
     (17.9, "Abaixo do peso"),
     (22.0, "Peso normal"),
     (27.3, "Sobrepeso"),
-    (33.0, "Obesidade grau I"),
-    (37.0, "Obesidade grau II"),
-    (45.0, "Obesidade grau III"),
+    (33.0, "Obesidade Grau I"),
+    (37.0, "Obesidade Grau II"),
+    (45.0, "Obesidade Grau III"),
 ])
 def test_classificar_imc_varios_casos(imc_valor, classificacao_esperada):
     assert classificar_imc(imc_valor) == classificacao_esperada
