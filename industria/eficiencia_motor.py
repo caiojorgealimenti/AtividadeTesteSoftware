@@ -1,8 +1,9 @@
 def calcular_eficiencia(potencia_saida, potencia_entrada):
-    if potencia_entrada <= 0:
-        raise ValueError("Potência de entrada deve ser maior que zero.")
+    if potencia_entrada == 0:
+        raise ValueError("A potência de entrada não pode ser zero.")
     eficiencia = (potencia_saida / potencia_entrada) * 100
-    return round(eficiencia, 2)
+    return round(eficiencia, 1)
+
 
 def classificar_eficiencia(eficiencia):
     if eficiencia < 80:
@@ -12,12 +13,8 @@ def classificar_eficiencia(eficiencia):
     else:
         return "IE3 - Alta eficiência"
 
+
 def analise_motor(potencia_saida, potencia_entrada):
     eficiencia = calcular_eficiencia(potencia_saida, potencia_entrada)
     classificacao = classificar_eficiencia(eficiencia)
-    return {
-        "potencia_saida": potencia_saida,
-        "potencia_entrada": potencia_entrada,
-        "eficiencia": eficiencia,
-        "classificacao": classificacao,
-    }
+    return eficiencia, classificacao
